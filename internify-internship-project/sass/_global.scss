@@ -1,0 +1,36 @@
+@import "variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-family: $fontFredoka;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-color: white;
+  position: relative;
+  max-height: 100vh;
+}
+
+@media screen and (min-width: 769px) {
+  body {
+    height: 100vh;
+    background-color: rgba(100, 100, 100, 0.3);
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper {
+    height: min-content;
+    margin: 0 7.5vw;
+    display: flex;
+    overflow-y: visible;
+    border-radius: 0.25vw;
+  }
+}

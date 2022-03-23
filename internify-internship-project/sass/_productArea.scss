@@ -1,0 +1,187 @@
+@import "variables";
+
+#productArea {
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 4vw;
+  background-color: rgba(235, 224, 224, 0.3);
+  column-gap: 2vw;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  .product {
+    grid-row: 1;
+    width: min-content;
+    background-color: white;
+    padding: 2vw;
+    border-radius: 1.25vw;
+    scroll-snap-align: start;
+    .productImage {
+      height: 37.5vw;
+      border-radius: 1vw;
+      img {
+        max-width: 37.5vw;
+        opacity: 0.75;
+      }
+      background-color: rgb(150, 134, 134);
+      margin-bottom: 4vw;
+    }
+    .productName {
+      font-size: 3vw;
+      margin-bottom: 7.5vw;
+      line-height: 1.2em;
+      height: 2.4em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .productPrice {
+      background-color: rgba(150, 134, 134, 0.2);
+      padding: 1.5vw;
+      font-size: 4vw;
+      margin-bottom: 1vw;
+    }
+    .cargoFee {
+      display: flex;
+      align-items: center;
+      padding: 1vw;
+      margin-bottom: 1vw;
+      img {
+        display: none;
+      }
+      .dot {
+        height: 0.75vw;
+        width: 0.75vw;
+        display: inline-block;
+        border-radius: 100%;
+        background-color: gray;
+        margin-right: 1vw;
+        margin-top: 0.75vw;
+      }
+      span {
+        font-size: 2.5vw;
+      }
+    }
+    .addToCart {
+      display: flex;
+      padding: 2vw;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+      border-radius: 1vw;
+      color: white;
+      font-size: 4vw;
+      margin-top: 1.5vw;
+      cursor: pointer;
+    }
+  }
+}
+#next,
+#previous {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+@media screen and(min-width:769px) {
+  #productArea {
+    padding: 0vw;
+    padding-bottom: 3vw;
+    gap: 0;
+    margin-top: 3vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+    background-color: white;
+    .product {
+      padding: 0.6vw;
+      border-radius: 0.3vw;
+      border: solid 0.1vw rgba(206, 186, 186, 0.3);
+      .productImage {
+        height: 13.75vw;
+        margin-bottom: 2vw;
+        border-radius: 0.3vw;
+        img {
+          width: 13.75vw;
+        }
+      }
+      .productName {
+        font-size: 1vw;
+        margin-bottom: 0vw;
+      }
+      .productPrice {
+        font-size: 1.5vw;
+        padding: 0.75vw;
+        margin-top: 2vw;
+        margin-bottom: 0.35vw;
+      }
+      .cargoFee {
+        margin-bottom: 1.5vw;
+        padding: 0.5vw;
+        img {
+          display: inline;
+          width: 1vw;
+          margin-right: 0.5vw;
+        }
+        .dot {
+          display: none;
+        }
+        span {
+          font-size: 1vw;
+        }
+      }
+      .addToCart {
+        visibility: hidden;
+        font-size: 1vw;
+        padding: 0.5vw 1vw;
+        margin-top: 3vw;
+        border-radius: 0.35vw;
+      }
+    }
+    #previous {
+      img {
+        width: 1.25vw;
+      }
+    }
+
+    .product:not(last-child) {
+      margin-right: 1vw;
+    }
+    .product:hover {
+      transition: box-shadow 0.2s;
+      box-shadow: 0 5px 10px 5px hsl(228, 9%, 89%);
+      .addToCart {
+        visibility: visible;
+      }
+      .cargoFee {
+        visibility: hidden;
+      }
+    }
+  }
+  #next,
+  #previous {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+    border-radius: 100%;
+    opacity: 0.9;
+    z-index: 3;
+    top: 24%;
+    cursor: pointer;
+    img {
+      width: 1.25vw;
+    }
+    padding: 1.25vw;
+    padding-left: 0.5vw;
+    background-color: white;
+  }
+  #previous {
+    left: 20%;
+    img {
+      opacity: 0.1;
+    }
+  }
+  #next {
+    right: -1.25%;
+  }
+}
