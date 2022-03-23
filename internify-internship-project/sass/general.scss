@@ -4,12 +4,12 @@
 @import "productArea";
 @import "added-to-cart";
 
-nav {
+#navigation-grid-list li {
   border-bottom: solid rgba(61, 60, 60, 0.2) 0.55vw;
 }
 
 @media screen and (min-width: 769px) {
-  nav {
+  #navigation-grid-list li {
     border-bottom: 0px;
   }
 }

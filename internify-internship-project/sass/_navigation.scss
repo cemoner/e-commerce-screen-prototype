@@ -16,9 +16,13 @@
       cursor: pointer;
     }
   }
+  padding-bottom: 0;
 }
 .navigation-grid-list::-webkit-scrollbar {
   display: none;
+  padding: 0;
+  width: 0;
+  height: 0;
 }
 
 #navigation-heading {

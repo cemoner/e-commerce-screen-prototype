@@ -27,7 +27,10 @@ function desktopEffect(index_number) {
 
 function mobileEffect(index_number) {
   mobileReset();
-  nav_lis[index_number].setAttribute("style", "border-color:rgb(0, 102, 255)");
+  nav_lis[index_number].setAttribute(
+    "style",
+    "border-bottom:solid 1vw rgb(0, 102, 255)"
+  );
 }
 
 function desktopReset() {
@@ -40,7 +43,10 @@ function desktopReset() {
 
 function mobileReset() {
   for (let i = 0; i <= nav_lis.length - 1; i++) {
-    nav_lis[i].setAttribute("style", "border-color:transparent");
+    nav_lis[i].setAttribute(
+      "style",
+      "border-bottom:solid rgba(61, 60, 60, 0.2) 0.55vw"
+    );
   }
 }
 
